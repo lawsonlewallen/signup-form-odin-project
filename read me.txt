@@ -1,0 +1,8 @@
+This project is to create a Sign-up Form for a dummy service
+It is a final project for the intermediate HTML/CSS course on The Odin Project
+Requirements:
+    -match all inputs on the example sign-up form provided
+    -background-image
+    -use an external font
+    -form needs to have a password and confirm password input (confirm password will require JS to make sure both inputs match)
+    -work with :valid and :invalid pseudoclasses to help with client-side validation

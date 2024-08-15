@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up Form</title>
+    <link rel="stylesheet" href="signup-form.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <h1>LOGO</h1>
+        </div>
+    </div>
+    <div class="content">
+        <div class="text">
+        <h1>Sign up now!</h1>
+            <p>Sign up for our service below.</p>
+        </div>
+        <div class="form">
+            <h2>This is the form</h2>
+            <p>Inputs marked with asterisk (*) are required.</p>
+            <form action="url" method="POST">
+                <div class="input">
+                    <label for="first_name">*first name</label>
+                    <input type="text" name="first_name" id="first_name" placeholder="Bob" required>
+                    <span class="validate"></span>
+                </div>
+                <div class="input">
+                    <label for="last_name">*last name</label>
+                    <input type="text" name="last_name" id="last_name" placeholder="Smith" required>
+                    <span class="validate"></span>
+                </div>
+                <div class="input">
+                    <label for="email">*e-mail</label>
+                    <input type="email" name="email" id="email" placeholder="bobsmith@email.com" required>
+                    <span class="validate"></span>
+                </div>
+                <div class="input">
+                    <label for="phone">phone number</label>
+                    <input type="tel" name="phone" id="phone" placeholder="555-555-5555" pattern="\d{10}" maxlength="10">
+                    <span class="validate"></span>
+                </div>
+                <div class="input">
+                    <label for="pw">*password</label>
+                    <input type="password" name="pw" id="pw" required="required">
+                    <span class="validate"></span>
+                </div>
+                <div class="input">
+                    <label for="confirmpw">*confirm password</label>
+                    <input type="password" name="confirmpw" id="confirmpw" required>
+                    <span class="validate"></span>
+                </div>
+            </form>
+            <div class="button"><button type="submit">Sign Up</button></div>
+        </div>
+    </div>
+</body>
+</html>
