@@ -21,24 +21,36 @@
             <h2>This is the form</h2>
             <p>Inputs marked with asterisk (*) are required.</p>
             <form action="url" method="POST">
-                <label for="first_name">*first name
+                <div class="input">
+                    <label for="first_name">*first name</label>
                     <input type="text" name="first_name" id="first_name" placeholder="Bob" required>
-                </label>
-                <label for="last_name">*last name
+                    <span class="validate"></span>
+                </div>
+                <div class="input">
+                    <label for="last_name">*last name</label>
                     <input type="text" name="last_name" id="last_name" placeholder="Smith" required>
-                </label>
-                <label for="email">*e-mail
+                    <span class="validate"></span>
+                </div>
+                <div class="input">
+                    <label for="email">*e-mail</label>
                     <input type="email" name="email" id="email" placeholder="bobsmith@email.com" required>
-                </label>
-                <label for="phone">phone number
+                    <span class="validate"></span>
+                </div>
+                <div class="input">
+                    <label for="phone">phone number</label>
                     <input type="tel" name="phone" id="phone" placeholder="555-555-5555" pattern="\d{10}" maxlength="10">
-                </label>
-                <label for="pw">*password
+                    <span class="validate"></span>
+                </div>
+                <div class="input">
+                    <label for="pw">*password</label>
                     <input type="password" name="pw" id="pw" required="required">
-                </label>
-                <label for="confirmpw">*confirm password
+                    <span class="validate"></span>
+                </div>
+                <div class="input">
+                    <label for="confirmpw">*confirm password</label>
                     <input type="password" name="confirmpw" id="confirmpw" required>
-                </label>    
+                    <span class="validate"></span>
+                </div>
             </form>
             <div class="button"><button type="submit">Sign Up</button></div>
         </div>
