@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-Up Form</title>
     <link rel="stylesheet" href="signup-form.css">
+    <script src="signup-form.js" defer></script>
 </head>
 <body>
     <div class="sidebar">
@@ -24,32 +25,39 @@
                 <div class="input">
                     <label for="first_name">*first name</label>
                     <input type="text" name="first_name" id="first_name" placeholder="Bob" required>
-                    <span class="validate"></span>
+                    <span class="validate-symbol"></span>
                 </div>
                 <div class="input">
                     <label for="last_name">*last name</label>
                     <input type="text" name="last_name" id="last_name" placeholder="Smith" required>
-                    <span class="validate"></span>
+                    <span class="validate-symbol"></span>
                 </div>
                 <div class="input">
                     <label for="email">*e-mail</label>
                     <input type="email" name="email" id="email" placeholder="bobsmith@email.com" required>
-                    <span class="validate"></span>
+                    <span class="validate-symbol"></span>
                 </div>
                 <div class="input">
                     <label for="phone">phone number</label>
                     <input type="tel" name="phone" id="phone" placeholder="555-555-5555" pattern="\d{10}" maxlength="10">
-                    <span class="validate"></span>
+                    <span class="validate-symbol"></span>
                 </div>
                 <div class="input">
                     <label for="pw">*password</label>
-                    <input type="password" name="pw" id="pw" required="required">
-                    <span class="validate"></span>
+                    <input type="password" name="pw" id="pw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                    <span class="validate-symbol"></span>
+                    <div id="pw-message">
+                        <h3>Password must contain the following:</h3>
+                        <p id="letter" class="pw-invalid">A <b>lowercase</b> letter</p>
+                        <p id="capital" class="pw-invalid">A <b>capital (uppercase)</b> letter</p>
+                        <p id="number" class="pw-invalid">A <b>number</b></p>
+                        <p id="length" class="pw-invalid">Minimum <b>8 characters</b></p>
+                    </div>
                 </div>
                 <div class="input">
                     <label for="confirmpw">*confirm password</label>
-                    <input type="password" name="confirmpw" id="confirmpw" required>
-                    <span class="validate"></span>
+                    <input type="password" name="confirmpw" id="confirmpw" class="confirm-invalid" required>
+                    <span class="validate-symbol"></span>
                 </div>
             </form>
             <div class="button"><button type="submit">Sign Up</button></div>

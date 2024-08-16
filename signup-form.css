@@ -94,19 +94,19 @@ input:user-invalid {
     background-color: rgba(243, 135, 135, 0.858);
     transition-duration: .4s;
 }
-input:user-valid {
+input:user-valid:not(input#confirmpw) {
     border: rgb(42, 150, 42) solid 2px;
     background-color: rgba(139, 232, 144, 0.858);
     transition-duration: .4s;
 }
-input:user-valid + span::before{
+input:user-valid:not(input#confirmpw) + .validate-symbol::before{
  content: "\2713";
  color: rgb(42, 150, 42);
  position: absolute;
  right: .25rem;
  top: 1.6rem;
 }
-input:user-invalid + span::before{
+input:user-invalid:not(input#confirmpw) + .validate-symbol::before{
     content: "\274C";
     font-size: .75rem;
     color: red;
@@ -135,4 +135,31 @@ button {
     width: 25%;
     height: 1.5rem;
     font-size: 1rem;
+}
+div#pw-message{
+    display: none;
+    position: absolute;
+    font-size: .5rem;
+    width: 100%;
+    left: -15rem;
+    bottom: -2rem;
+    background-color: white;
+}
+.pw-invalid {
+    color: red;
+}
+.pw-invalid::before {
+    content: "\274C";
+}
+.pw-valid {
+    color:rgb(42, 150, 42)
+}
+.pw-valid::before{
+    content: "\2713";
+}
+.confirm-invalid {
+    background-color: red;
+}
+.confirm-valid {
+    background-color: rgb(42, 150, 42);
 }
