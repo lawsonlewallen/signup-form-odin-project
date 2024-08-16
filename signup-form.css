@@ -6,6 +6,10 @@
  padding: 0;
  font-size: 24px;
  font-family: Arial, Helvetica, sans-serif;
+ --light-red: rgba(243, 135, 135, 0.858);
+ --light-green: rgba(139, 232, 144, 0.858);
+ --dark-green: rgb(42, 150, 42);
+ --dark-red: red;
 }
 body{
     display: flex;
@@ -89,27 +93,29 @@ input[name="first_name"],
 input[name="last_name"] {
     text-transform: capitalize;
 }
-input:user-invalid {
-    border: red solid 2px;
-    background-color: rgba(243, 135, 135, 0.858);
+input:user-invalid, .confirm-invalid {
+    border: var(--dark-red) solid 2px;
+    background-color: var(--light-red);
     transition-duration: .4s;
 }
-input:user-valid:not(input#confirmpw) {
-    border: rgb(42, 150, 42) solid 2px;
-    background-color: rgba(139, 232, 144, 0.858);
+input:user-valid:not(input#confirmpw), .confirm-valid {
+    border: var(--dark-green) solid 2px;
+    background-color: var(--light-green);
     transition-duration: .4s;
 }
-input:user-valid:not(input#confirmpw) + .validate-symbol::before{
+input:user-valid:not(input#confirmpw) + .validate-symbol::before,
+.confirm-valid + .validate-symbol::before {
  content: "\2713";
- color: rgb(42, 150, 42);
+ color: var(--dark-green);
  position: absolute;
  right: .25rem;
  top: 1.6rem;
 }
-input:user-invalid:not(input#confirmpw) + .validate-symbol::before{
+input:user-invalid:not(input#confirmpw) + .validate-symbol::before,
+.confirm-invalid + .validate-symbol::before {
     content: "\274C";
     font-size: .75rem;
-    color: red;
+    color: var(--dark-red);
     position: absolute;
     right: .3rem;
     top: 1.75rem;
@@ -146,20 +152,14 @@ div#pw-message{
     background-color: white;
 }
 .pw-invalid {
-    color: red;
+    color: var(--dark-red);
 }
 .pw-invalid::before {
     content: "\274C";
 }
 .pw-valid {
-    color:rgb(42, 150, 42)
+    color: var(--dark-green);
 }
 .pw-valid::before{
     content: "\2713";
-}
-.confirm-invalid {
-    background-color: red;
-}
-.confirm-valid {
-    background-color: rgb(42, 150, 42);
 }

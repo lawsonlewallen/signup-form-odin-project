@@ -9,6 +9,25 @@ passwordInputField.onblur = function() {
     document.getElementById("pw-message").style.display = "none";
 }
 
+//check if confirm password matches password field
+const confirmPasswordField = document.getElementById("confirmpw");
+
+const comparePasswordFields = function () {
+  if (passwordInputField.value === confirmPasswordField.value){
+      confirmPasswordField.classList.remove('confirm-invalid');
+      confirmPasswordField.classList.add('confirm-valid');
+  } else {
+      confirmPasswordField.classList.remove('confirm-valid');
+      confirmPasswordField.classList.add('confirm-invalid');
+  }
+}
+confirmPasswordField.onfocus = function () {
+  comparePasswordFields();
+}
+confirmPasswordField.onkeyup = function() {
+  comparePasswordFields();
+}
+
 /*each var matches a line of text in our pw message, we change the class of it to
 pw-valid once the requirements are met by the user*/
 var letter = document.getElementById("letter");
@@ -55,19 +74,7 @@ passwordInputField.onkeyup = function() {
       length.classList.remove("pw-valid");
       length.classList.add("pw-invalid");
     }
+    comparePasswordFields();
   }
 
-  //check if confirm password matches password field
-  const confirmPasswordField = document.getElementById("confirmpw");
-
-  confirmPasswordField.onkeyup = function() {
-    if (passwordInputField.value === confirmPasswordField.value){
-        confirmPasswordField.classList.remove('confirm-invalid');
-        confirmPasswordField.classList.add('confirm-valid');
-    } else {
-        confirmPasswordField.classList.remove('confirm-valid');
-        confirmPasswordField.classList.add('confirm-invalid');
-    }
-    console.log(passwordInputField.value);
-    console.log(confirmPasswordField.value);
-  }
+  
