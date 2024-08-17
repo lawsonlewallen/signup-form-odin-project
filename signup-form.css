@@ -87,7 +87,6 @@ input:focus {
     appearance: none;
     background-color: white;
     transition-duration: .2s;
-    border-radius: 0;
 }
 input[name="first_name"],
 input[name="last_name"] {
