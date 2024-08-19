@@ -23,44 +23,44 @@
             <p>Inputs marked with asterisk (*) are required.</p>
             <form action="url" method="POST">
                 <div class="input">
-                    <label for="first_name">*first name</label>
+                    <label for="first_name">*First name</label>
                     <input type="text" name="first_name" id="first_name" placeholder="Bob" required>
                     <span class="validate-symbol"></span>
                 </div>
                 <div class="input">
-                    <label for="last_name">*last name</label>
+                    <label for="last_name">*Last name</label>
                     <input type="text" name="last_name" id="last_name" placeholder="Smith" required>
                     <span class="validate-symbol"></span>
                 </div>
                 <div class="input">
-                    <label for="email">*e-mail</label>
+                    <label for="email">*E-mail</label>
                     <input type="email" name="email" id="email" placeholder="bobsmith@email.com" required>
                     <span class="validate-symbol"></span>
                 </div>
                 <div class="input">
-                    <label for="phone">phone number</label>
+                    <label for="phone">Phone number</label>
                     <input type="tel" name="phone" id="phone" placeholder="555-555-5555" pattern="\d{10}" maxlength="10">
                     <span class="validate-symbol"></span>
                 </div>
                 <div class="input">
-                    <label for="pw">*password</label>
-                    <input type="password" name="pw" id="pw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                    <label for="pw">*Password</label>
+                    <input type="password" name="pw" id="pw" placeholder='********' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                     <span class="validate-symbol"></span>
                     <div id="pw-message">
                         <h3>Password must contain the following:</h3>
-                        <p id="letter" class="pw-invalid">A <b>lowercase</b> letter</p>
-                        <p id="capital" class="pw-invalid">A <b>capital (uppercase)</b> letter</p>
-                        <p id="number" class="pw-invalid">A <b>number</b></p>
-                        <p id="length" class="pw-invalid">Minimum <b>8 characters</b></p>
+                        <p id="letter" class="pw-invalid"> A <b>lowercase</b> letter</p>
+                        <p id="capital" class="pw-invalid"> A <b>capital (uppercase)</b> letter</p>
+                        <p id="number" class="pw-invalid"> A <b>number</b></p>
+                        <p id="length" class="pw-invalid"> Minimum <b>8 characters</b></p>
                     </div>
                 </div>
                 <div class="input">
-                    <label for="confirmpw">*confirm password</label>
-                    <input type="password" name="confirmpw" id="confirmpw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                    <label for="confirmpw">*Confirm password</label>
+                    <input type="password" name="confirmpw" id="confirmpw" placeholder='********' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                     <span class="validate-symbol"></span>
                 </div>
             </form>
-            <div class="button"><button type="submit">Sign Up</button></div>
+            <div class="button"><button type="submit">Sign up</button></div>
         </div>
     </div>
 </body>

@@ -22,10 +22,12 @@ const comparePasswordFields = function () {
   }
 }
 confirmPasswordField.onfocus = function () {
-  comparePasswordFields();
+    if (confirmPasswordField.value === ''){
+    } else { comparePasswordFields();};
 }
 confirmPasswordField.onkeyup = function() {
-  comparePasswordFields();
+    if (confirmPasswordField.value === ''){
+    } else { comparePasswordFields();};
 }
 
 /*each var matches a line of text in our pw message, we change the class of it to

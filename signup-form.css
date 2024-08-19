@@ -92,17 +92,17 @@ input[name="first_name"],
 input[name="last_name"] {
     text-transform: capitalize;
 }
-input:user-invalid, .confirm-invalid {
+input:invalid:not(:placeholder-shown), .confirm-invalid:not(:placeholder-shown) {
     border: var(--dark-red) solid 2px;
     background-color: var(--light-red);
     transition-duration: .4s;
 }
-input:user-valid:not(input#confirmpw), .confirm-valid {
+input:valid:not(:placeholder-shown):not(#confirmpw):not(:focus), .confirm-valid {
     border: var(--dark-green) solid 2px;
     background-color: var(--light-green);
     transition-duration: .4s;
 }
-input:user-valid:not(input#confirmpw) + .validate-symbol::before,
+input:valid:not(#confirmpw):not(:placeholder-shown) + .validate-symbol::before,
 .confirm-valid + .validate-symbol::before {
  content: "\2713";
  color: var(--dark-green);
@@ -110,8 +110,9 @@ input:user-valid:not(input#confirmpw) + .validate-symbol::before,
  right: .25rem;
  top: 1.6rem;
 }
-input:user-invalid:not(input#confirmpw) + .validate-symbol::before,
-.confirm-invalid + .validate-symbol::before {
+input:invalid:not(#confirmpw):not(:placeholder-shown) + .validate-symbol::before,
+.confirm-invalid:not(:placeholder-shown) + .validate-symbol::before,
+.confirm-valid:invalid:not(:placeholder-shown) + .validate-symbol::before {
     content: "\274C";
     font-size: .75rem;
     color: var(--dark-red);
@@ -119,9 +120,27 @@ input:user-invalid:not(input#confirmpw) + .validate-symbol::before,
     right: .3rem;
     top: 1.75rem;
 }
+.confirm-invalid:not(:placeholder-shown) + .validate-symbol::after,
+.confirm-valid:invalid:not(:placeholder-shown) + .validate-symbol::after{
+    content: '*password fields must match';
+    position: absolute;
+    right: -175px;
+    bottom: 48px;
+    font-size: .5rem;
+    color: var(--dark-red);
+    width: 100%;
+}
+input:focus:invalid {
+    background-color: white;
+    transition: .2s;
+}
+input:valid:focus {
+    background-color: white;
+    transition: .2s;
+    border: var(--dark-green) solid 2px;
+}
 label {
     margin: .5rem auto;
-    text-transform: uppercase;
     font-size: .75rem;
     position: relative;
 }
@@ -147,8 +166,10 @@ div#pw-message{
     font-size: .5rem;
     width: 100%;
     left: -15rem;
-    bottom: -2rem;
+    bottom: -2.5rem;
     background-color: white;
+    border: rgb(219, 219, 219) 3px solid;
+    border-radius: 10px;
 }
 .pw-invalid {
     color: var(--dark-red);
