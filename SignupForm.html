@@ -20,8 +20,8 @@
         </div>
         <div class="form">
             <h2>This is the form</h2>
-            <p>Inputs marked with asterisk (*) are required.</p>
-            <form action="url" method="POST">
+            <p>Inputs marked with an asterisk (*) are required.</p>
+            <form action="" method="POST">
                 <div class="input">
                     <label for="first_name">*First name</label>
                     <input type="text" name="first_name" id="first_name" placeholder="Bob" required>
@@ -46,7 +46,7 @@
                     <label for="pw">*Password</label>
                     <input type="password" name="pw" id="pw" placeholder='********' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                     <span class="validate-symbol"></span>
-                    <div id="pw-message">
+                    <div id="pw-message" class="popup">
                         <h3>Password must contain the following:</h3>
                         <p id="letter" class="pw-invalid"> A <b>lowercase</b> letter</p>
                         <p id="capital" class="pw-invalid"> A <b>capital (uppercase)</b> letter</p>
